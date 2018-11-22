@@ -294,8 +294,10 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        # xpos gui.navigation_xpos
+        xpos 0.5
+        xoffset -160
+        yalign 0.7
 
         spacing gui.navigation_spacing
 
@@ -303,15 +305,17 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
+            textbutton _("Load") action ShowMenu("load")
+
+            textbutton _("Preferences") action ShowMenu("preferences")
+
+            textbutton _("About") action ShowMenu("about")
+
         else:
 
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
-
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -321,15 +325,17 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
-
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            if main_menu:
+
+                textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            if main_menu:
+
+                textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -372,8 +378,8 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            # text "[config.version]":
+                # style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -384,16 +390,15 @@ style main_menu_version is main_menu_text
 
 style main_menu_frame:
     xsize 420
-    yfill True
-
-    background "gui/overlay/main_menu.png"
+    yfill False
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
+    xalign 0.5
+    xoffset 0
     xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    yalign 0.25
+    yoffset 0
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
@@ -468,7 +473,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
+    # use navigation
 
     textbutton _("Return"):
         style "return_button"
@@ -1511,8 +1516,3 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 900
-
-
-
-
-

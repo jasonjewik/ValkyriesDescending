@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 314: vbox expects a non-empty block.
+    if main_menu:
+                 ^
+
+Ren'Py Version: Ren'Py 7.1.1.929
+Wed Nov 21 19:50:16 2018
