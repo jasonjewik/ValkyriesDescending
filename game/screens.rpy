@@ -337,8 +337,52 @@ screen navigation():
 
                 textbutton _("Quit") action Quit(confirm=not main_menu)
 
+## Test alt Navigation screen ##################################################
+
+screen alt_navigation():
+
+    vbox:
+        style_prefix "alt_navigation"
+
+        xpos gui.navigation_xpos
+        yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        if main_menu:
+
+            textbutton _("Start") action Start()
+
+        else:
+
+            textbutton _("History") action ShowMenu("history")
+
+            textbutton _("Save") action ShowMenu("save")
+
+        textbutton _("Load") action ShowMenu("load")
+
+        textbutton _("Preferences") action ShowMenu("preferences")
+
+        if _in_replay:
+
+            textbutton _("End Replay") action EndReplay(confirm=True)
+
+        elif not main_menu:
+
+            textbutton _("Main Menu") action MainMenu()
+
+        textbutton _("About") action ShowMenu("about")
+
+        if renpy.variant("pc"):
+
+            ## Help isn't necessary or relevant to mobile devices.
+            textbutton _("Help") action ShowMenu("help")
+
+            ## The quit button is banned on iOS and unnecessary on Android.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
+style alt_navigation_button is gui_alt_button
 style navigation_button_text is gui_button_text
 
 style navigation_button:
@@ -473,7 +517,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    # use navigation
+    use alt_navigation
 
     textbutton _("Return"):
         style "return_button"

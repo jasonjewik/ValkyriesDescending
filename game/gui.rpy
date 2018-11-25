@@ -197,6 +197,8 @@ define gui.quick_button_text_selected_color = gui.accent_color
 
 # define gui.navigation_button_width = 250
 
+# define gui.alt_button_text_align = 0.0
+
 
 ## Choice Buttons ##############################################################
 ##

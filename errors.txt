@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 314: vbox expects a non-empty block.
-    if main_menu:
-                 ^
+File "game/script.rpy", line 100: expected statement.
+    goto choice1_0
+                  ^
+
+File "game/script.rpy", line 104: expected statement.
+    goto choice1_1
+                  ^
+
+File "game/script.rpy", line 112: expected statement.
+    goto choice1_c
+                  ^
+
+File "game/script.rpy", line 125: expected statement.
+    goto choice1_c
+                  ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 21 19:50:16 2018
+Sat Nov 24 21:08:12 2018
