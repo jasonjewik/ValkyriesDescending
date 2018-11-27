@@ -2,21 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 100: expected statement.
-    goto choice1_0
-                  ^
-
-File "game/script.rpy", line 104: expected statement.
-    goto choice1_1
-                  ^
-
-File "game/script.rpy", line 112: expected statement.
-    goto choice1_c
-                  ^
-
-File "game/script.rpy", line 125: expected statement.
-    goto choice1_c
-                  ^
+File "game/gui.rpy", line 13: invalid syntax
+    config.font_replacement_map["Volkhov-Regular.ttf", False, True] = ("Volkhov-Italic.ttf", False, False]
+                                                                                                          ^
+    
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sat Nov 24 21:08:12 2018
+Tue Nov 27 09:34:21 2018

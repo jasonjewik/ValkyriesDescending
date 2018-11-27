@@ -10,7 +10,8 @@ init offset = -2
 ## width and height of the game.
 init python:
     gui.init(1920, 1080)
-
+    config.font_replacement_map["Volkhov-Regular.ttf", False, False] = (True, "Volkhov-Italic.ttf", "Volkhov-Bold.ttf")
+    config.font_replacement_map["SpectralSC-Regular.ttf", False, False] = (True, "SpectralSC-Italic.ttf", "SpectralSC-Bold.ttf")
 
 
 ################################################################################
@@ -55,13 +56,13 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/Volkhov-Regular.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "fonts/Volkhov-Regular.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/SpectralSC-Regular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -156,7 +157,7 @@ define gui.button_borders = Borders(6, 6, 6, 6)
 define gui.button_tile = False
 
 ## The font used by the button.
-define gui.button_text_font = gui.interface_text_font
+define gui.button_text_font = "fonts/Volkhov-Regular.ttf"
 
 ## The size of the text used by the button.
 define gui.button_text_size = gui.interface_text_size
