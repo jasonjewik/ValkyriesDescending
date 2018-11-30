@@ -2,10 +2,16 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 13: invalid syntax
-    config.font_replacement_map["Volkhov-Regular.ttf", False, True] = ("Volkhov-Italic.ttf", False, False]
-                                                                                                          ^
+File "game/script.rpy", line 130: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    """
+        She is a whimsical one, that much I can tell. She does not exactly seem great at her job. Is she really an adult? I always thought that adults would take their jobs much more seriously, have a stiff upper lip, and hate the very concept of "fun".
+                                                                                                                                                                                                                                                         ^
     
+        Wait, before that, what were they even talking about? Agents? Mages’ Society? Alcatraz? What was going on?
+    
+        {i}Have... Have I managed to get kidnapped by real, actual psychos?!{/i}
+        """
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Nov 27 09:34:21 2018
+Fri Nov 30 09:38:52 2018
