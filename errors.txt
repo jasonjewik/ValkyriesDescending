@@ -2,16 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 130: end of line expected.
+File "game/script.rpy", line 178: end of line expected.
 (Perhaps you left out a " at the end of the first line.)
-    """
-        She is a whimsical one, that much I can tell. She does not exactly seem great at her job. Is she really an adult? I always thought that adults would take their jobs much more seriously, have a stiff upper lip, and hate the very concept of "fun".
-                                                                                                                                                                                                                                                         ^
-    
-        Wait, before that, what were they even talking about? Agents? Mages’ Society? Alcatraz? What was going on?
-    
-        {i}Have... Have I managed to get kidnapped by real, actual psychos?!{/i}
-        """
+    advNarrator "She speaks. Even her voice sounds like an illusion!""
+                                                                     ^
+        advNarrator "Jobber tightens her grip on my shoulder. \"Not happening. She’s under my protection.\""
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Fri Nov 30 09:38:52 2018
+Mon Dec 03 09:30:34 2018

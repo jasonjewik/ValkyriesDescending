@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 106, in script
-    jump choice1_1
-ScriptError: could not find label 'choice1_1'.
+  File "game/script.rpy", line 107, in script
+    mysteryChar "\"Don’t worry, you’re still in Moroes City. You woke up pretty quickly, to be honest. We’ve only just left your apartment; only an hour has passed, at most. I know you’re special, but even I’m impressed by how quickly you recover.\" She giggles."
+Exception: Sayer 'mysteryChar' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 106, in script
-    jump choice1_1
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'choice1_1'.
+  File "game/script.rpy", line 107, in script
+    mysteryChar "\"Don’t worry, you’re still in Moroes City. You woke up pretty quickly, to be honest. We’ve only just left your apartment; only an hour has passed, at most. I know you’re special, but even I’m impressed by how quickly you recover.\" She giggles."
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 650, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 560, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'mysteryChar' is not defined.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Fri Nov 30 09:40:06 2018
+Mon Dec 03 09:18:53 2018

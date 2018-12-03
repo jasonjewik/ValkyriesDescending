@@ -5,8 +5,6 @@
 
 define narrator = nvl_narrator
 define advNarrator = Character(None, kind=adv)
-define jobber = Character('Jobber', color="#c8c8ff")
-define mysteryChar = Character('???', color="#c8c8ff")
 
 define menu = nvl_menu
 
@@ -76,11 +74,11 @@ label start:
     scene alley with fade
     show hanamaru_05_03 at truecenter
 
-    mysteryChar "\"Hey there! You alright?\""
+    advNarrator "\"Hey there! You alright?\""
     advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"
     advNarrator "\"I-I’m fine.\" {i}She kidnapped me, right? Why is she acting so nice to me?{/i}"
     show hanamaru_05_01 at truecenter
-    mysteryChar "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
+    advNarrator "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
 
     """
     Why is she so concerned my well-being if she is the one who kidnapped me? Maybe hostages in good condition sell for more? Or could she be trying to keep my organs in working order?
@@ -106,22 +104,22 @@ label start:
         jump .choice1_1
 
     label .choice1_0:
-        mysteryChar "\"Don’t worry, you’re still in Moroes City. You woke up pretty quickly, to be honest. We’ve only just left your apartment; only an hour has passed, at most. I know you’re special, but even I’m impressed by how quickly you recover.\" She giggles."
+        advNarrator "\"Don’t worry, you’re still in Moroes City. You woke up pretty quickly, to be honest. We’ve only just left your apartment; only an hour has passed, at most. I know you’re special, but even I’m impressed by how quickly you recover.\" She giggles."
         advNarrator "\"What’s so funny?\""
-        mysteryChar "\"This reminds me of one of my favorite legends. Do you know of the Celtic hero Cú Chulainn?\""
-        mysteryChar "\"He also woke up far too early when he was put under. That landed him in a spot of trouble... Well, I’m sure that nothing like that will happen here.\" On that ominous note, she stops talking."
+        advNarrator "\"This reminds me of one of my favorite legends. Do you know of the Celtic hero Cú Chulainn?\""
+        advNarrator "\"He also woke up far too early when he was put under. That landed him in a spot of trouble... Well, I’m sure that nothing like that will happen here.\" On that ominous note, she stops talking."
         jump .choice1_c
 
     label .choice1_1:
-        mysteryChar "\"We’re heading to a private airfield where you can board a plane so that we can get you to our headquarters. That would be...\""
+        advNarrator "\"We’re heading to a private airfield where you can board a plane so that we can get you to our headquarters. That would be...\""
         advNarrator "She looks over at a man standing next to her. He is clad in a black trenchcoat, like the ones that the characters wore in that one movie about magic, flying, karate-wielding computer hackers. Had he been the one she had been talking to earlier?"
-        mysteryChar "\"Where is it again? It’s on Alcatraz Island, right?\""
+        advNarrator "\"Where is it again? It’s on Alcatraz Island, right?\""
         advNarrator "The man sighs."
-        mysteryChar "\"With all due respect, Agent Jobber, you’re an American: you should at least know this much. Additionally, as an international agent, you would do well to learn where all of the regional bases of operation are.\""
+        advNarrator "\"With all due respect, Agent Jobber, you’re an American: you should at least know this much. Additionally, as an international agent, you would do well to learn where all of the regional bases of operation are.\""
         advNarrator "He sounds exasperated, as if he has to deal with this level of incompetence on a regular."
-        mysteryChar "\"But, all that aside, yes,\" he says, straightening his sunglasses in an effort to regain his composure, \"the American Mages’ Society headquarters is located on Alcatraz Island.\""
-        jobber "\"There you have it!\" the woman, whose name I knew as Jobber, said, looking back at me, beaming. She did not seem even slightly fazed by the man’s exasperated tone."
-        jobber "\"You heard the man! We’re headed to Alcatraz! Isn’t that exciting? It’s quite a popular tourist destination, you know. It’ll be fun, I promise!\""
+        advNarrator "\"But, all that aside, yes,\" he says, straightening his sunglasses in an effort to regain his composure, \"the American Mages’ Society headquarters is located on Alcatraz Island.\""
+        advNarrator "\"There you have it!\" the woman, whose name I knew as Jobber, said, looking back at me, beaming. She did not seem even slightly fazed by the man’s exasperated tone."
+        advNarrator "\"You heard the man! We’re headed to Alcatraz! Isn’t that exciting? It’s quite a popular tourist destination, you know. It’ll be fun, I promise!\""
         jump .choice1_c
 
     label .choice1_c:
@@ -136,10 +134,65 @@ label start:
     """
     nvl clear
 
-    play sound "sounds/car_screeching_to_halt.mp3"
-    mysteryChar "\"What happened?! What's wrong?!\" the man next to Jobber yells."
-    mysteryChar "A girl! She just jumped in front of-!"
+    stop music
+    play sound "sounds/car_screeching_to_halt.ogg"
+    advNarrator"\"What happened?! What's wrong?!\" the man next to Jobber yells."
+    advNarrator "A girl! She just jumped in front of-!"
 
-    play sound "sounds/gunshot_assault_rifle.mp3"
+    play sound "sounds/gunshot_assault_rifle.ogg"
+    pause 1.0
+    play sound "sounds/finger_snap.ogg"
+
+    """
+    The man standing next to Jobber raises his right hand, snapping his fingers. The patterns on his trenchcoat start to glow a faint blue. Jobber does the same. I feel the atmosphere shift a little. There is a slight buzzing in my ears, as if the air with getting filled with electricity, except not quite. A delightful shiver runs through my limbs, begging me to leap into action.
+    """
+    nvl clear
+
+    advNarrator "\"Proceed with caution. We don’t know the—\""
+
+    play sound "sounds/gunshot_assault_rifle.ogg"
+    pause 0.25
+    play sound "sounds/glass_shattering.ogg"
+
+    advNarrator "\"Ugh, these bullets... They couldn’t have!\" the man grunts. He seems unharmed but is visibly shocked. \"How did they pierce—?!\""
+
+    play sound "sounds/gunshot_assault_rifle.ogg"
+
+    advNarrator "\"Gah!\""
+    advNarrator "This time, the man doubles over in pain, a blotch of red spreading out from his stomach region. He hacks out a cough, spraying crimson all over himself, further staining his coat. The red on black... the contrast stirs something within me."
+
+    play sound "sounds/heartbeat.ogg"
+
+    advNarrator "\"Get down!\" Jobber yells as she roughly pushes me to the floor of the van. She is not a moment too soon; another bullet just barely grazes the top of my head. I think I can see the single strand of hair that was shredded in the incident falling before my eyes."
+    advNarrator "Jobber puts her hand to the metal partition that separates the back of the van from the driver and passenger seats but pulls back abruptly with a yelp. She stares at her angry red palm in surprise. \"Heat?\" she whispers out. Her eyes widen in fear. \"Fire?\""
+
+    play sound "sounds/metal_melting.ogg"
+
+    """
+    A girl. Through the melted pool of steel and aluminum lying at the floor of the van steps a girl. Something about her captivated me. Her eyes, purple like amethysts. Purple? Is having purple eyes even naturally possible?
+
+    It was not just her eyes, either. Everything about her struck me as odd and out of place. She could not have possibly been much older than me but her aura… it just felt like she had lived several more lifetimes than me.
+
+    She enters without a sound. Her walking is so graceful that it almost did not seem like she was walking at all. Floating, no, hovering almost. It would not surprise me at all if this girl is just some ephemeral hallucination of mine.
+    """
+    nvl clear
+
+    advNarrator "The girl casually waves the assault rifle she is carrying in my direction. \"I’m here for her,\" she says in a soft, monotone voice."
+    advNarrator "She speaks. Even her voice sounds like an illusion!"
+    advNarrator "Jobber tightens her grip on my shoulder. \"Not happening. She’s under my protection.\""
+    advNarrator "Jobber sees her too. Guess that rules out me going insane."
+    advNarrator "\"Please,\" the girl says, raising the barrel of the rifle to point at Jobber without a hint of emotion in her voice."
+    advNarrator "\"No,\" Jobber replies resolutely."
+    advNarrator "The girl sweeps the barrel of her assault rifle in a wide arch."
+
+    play sound "sounds/gunshot_assault_rifle.ogg"
+    pause 0.1
+    play sound "sounds/gunshot_assault_rifle.ogg"
+    pause 0.1
+    play sound "sounds/gunshot_assault_rifle.ogg"
+    pause 0.1
+    play sound "sounds/gunshot_assault_rifle.ogg"
+
+    advNarrator "The smell of spent gunpowder fills the air. The sounds of the wind grow louder, no doubt because of the holes that now pepper the back of the van."
 
     return
