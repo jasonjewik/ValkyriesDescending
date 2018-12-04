@@ -2,11 +2,14 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 178: end of line expected.
+File "game/script.rpy", line 282: end of line expected.
 (Perhaps you left out a " at the end of the first line.)
-    advNarrator "She speaks. Even her voice sounds like an illusion!""
-                                                                     ^
-        advNarrator "Jobber tightens her grip on my shoulder. \"Not happening. She’s under my protection.\""
+    advNarrator "\"Please, stop it...\" Small lumps begin forming all over her hands and face. I realize in horror that they are boils, the kind that are caused by severe burns.""
+                                                                                                                                                                                  ^
+    
+    
+    
+        advNarrator "\"Please! Help me!\" Jobber is whimpering now. She is trying her hardest to scream but her throat sounds raspy, as if she has been smoking all her life. \"Please... Not this again...\""
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Mon Dec 03 09:30:34 2018
+Tue Dec 04 09:58:01 2018

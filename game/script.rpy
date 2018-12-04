@@ -171,7 +171,7 @@ label start:
     """
     A girl. Through the melted pool of steel and aluminum lying at the floor of the van steps a girl. Something about her captivated me. Her eyes, purple like amethysts. Purple? Is having purple eyes even naturally possible?
 
-    It was not just her eyes, either. Everything about her struck me as odd and out of place. She could not have possibly been much older than me but her aura… it just felt like she had lived several more lifetimes than me.
+    It was not just her eyes, either. Everything about her struck me as odd and out of place. She could not have possibly been much older than me but her aura... it just felt like she had lived several more lifetimes than me.
 
     She enters without a sound. Her walking is so graceful that it almost did not seem like she was walking at all. Floating, no, hovering almost. It would not surprise me at all if this girl is just some ephemeral hallucination of mine.
     """
@@ -193,6 +193,109 @@ label start:
     pause 0.1
     play sound "sounds/gunshot_assault_rifle.ogg"
 
+    hide hanamaru_05_03
+    show hanamaru_05_01
+
     advNarrator "The smell of spent gunpowder fills the air. The sounds of the wind grow louder, no doubt because of the holes that now pepper the back of the van."
+    advNarrator "\"Please,\" the girl asks again, punctuating the request by pointing the rifle at Jobber."
+    advNarrator "Jobber lets out a long, dramatic sigh. She slowly raises her hands to the air. \"Alright, you win. Take her.\""
+    advNarrator "At first, I feel just a bit betrayed. Didn’t she say I was under her protection? She’s just going to give me up so easily? Then, it hit me: Something’s not right. That was too hammed up, too theatrical."
+    advNarrator "The girl motions with her gun. \"Help her up.\""
+    advNarrator "Jobber stoops down and lowers her hands slowly, still indicating that she is unarmed and non-hostile. Once her mouth is right next to my ear, she whispers, \"Close your eyes.\""
+    advNarrator "I do not know why, but I do as she tells me to."
+
+    hide hanamaru_05_01
+    show white_bg
+
+    advNarrator "Even with my eyes pressed shut, the flash is blinding, like an instant sunrise. I feel myself being violently pulled by my collar backward. I hear a surprised yelp followed shortly by an explosion. \"You aren’t hurt, are you? Get up!\""
+
+    scene alley with fade
+    show hanamaru_05_03
+
+    advNarrator "\"I’m fine,\" I manage to groan out. It is a complete and utter lie: my throat feels as if it were crushed from getting pulled back so suddenly with such force."
+    advNarrator "Jobber smiles. \"That’s a relief. I was worried that I pulled too hard on your collar.\""
+    advNarrator "You did. You totally did. In fact, I can still feel the pressure around my neck as we speak."
+    advNarrator "\"But if you say you’re fine, then I’m sure that you’re fine!\""
+    advNarrator "I let it go. \"Where are we?\" I wheeze out raspily, rubbing my neck with my hand. I can still feel a slight indentation in the flesh, feel the pumping under my skin as blood rushes to return to the region. I hope this isn’t permanent."
+    advNarrator "\"An alleyway. I’m sorry, it looks like someone is after you.\""
+    advNarrator "\"After me?\""
+    advNarrator "\"Yes, after you. It’s to be expected: you’re under our protection for a reason. But to think that they would strike so early, so soon after your extraction...\""
+    advNarrator "\"But... why?\""
+    advNarrator "Jobber glances over her shoulder for a second and, after scanning the area, looks back at me. \"You’re... special. You’ve got something, something very rare and valuable.\""
+    advNarrator "\"So these people want to take that something from me?\""
+    advNarrator "Jobber shakes her head. \"No, it’s not something they can take from you, per se. It’s a part of you, something that makes you, well, you.\""
+    advNarrator "I still do not understand, which Jobber seems to understand after seeing my face."
+    advNarrator "\"It’s complicated,\" she continues. \"Your past... it gives you the potential. Whether or not you manifest it completely depends on your actions from here on out.\" Jobber motions toward a flaming pile of unrecognizable wreckage with her chin."
+    advNarrator "I realize that it must have been the van that we had just been riding in. \"How will you live your life now that people who are willing to do that are after you?\""
+    advNarrator "Something is in Jobber’s expression as she looks at the flames, something I cannot recognize. Is it... fear? Almost, but not quite."
+    advNarrator "Anger? No, that isn’t right either. It isn’t pain, I knew that. Whatever it is, it makes her face look truly ominous as the light of the flames danced across her visage."
+    advNarrator "\"Fire?\" Something about the way she had said that... I cannot get it out of my mind. The way she had whispered that word, it had a tone, a tone that went with this face, this expression. What is it? What emotion could Jobber be feeling right now?"
+    advNarrator "\"Miss Jobber?\""
+    advNarrator "\"Agent Jobber,\" she corrects automatically, eyes still fixed on the burning wreckage."
+    advNarrator "\"Agent Jobber, are you scared of fire?\""
+    advNarrator "That catches her attention. She turns and stares at me for a second, then closes her eyes and chuckles."
+    advNarrator "\"You really are a perceptive one, aren’t you?\""
+    advNarrator "\"I just wanted to know. Sorry, if it’s too hard to talk about, then...\""
+    advNarrator "\"No, no, it’s fine!\" Jobber reassures me, waving her hands in front of her quickly. \"Well,\" she starts slowly, \"I’m not sure. Fire and I have... well, the two of us go way back. I think that’s a good way to put it. It’s given, it’s taken. Really, it’s—\""
+    advNarrator "\"It’s just beautiful, isn’t it?\""
+
+    show hanamaru_05_01 at right
+    show hanamaru_05_03 at left
+
+    advNarrator "Both Jobber and I turn, searching for the source of the voice. A woman stands there, smirking."
+    advNarrator "Jobber scowls. \"You!\""
+    advNarrator "\"Yup, it’s me. I’m here!\" The woman points her finger directly at me. \"Specifically, here for you!\""
+    advNarrator "Her upbeat voice is throwing me for a loop. It feels so... off, like a hollow imitation of real happiness. It is the middle of the night, practically pitch black, and there is a burning car close by that encases at least two charred corpses and yet this woman looks as if she is as happy as can be."
+    advNarrator "\"You... You... You traitor! Witch! Heretic!\" Jobber stutters out, spitting verbal venom. This expression, unlike so many of her other ones, I recognize instantly: pure, unadulterated fear and anger. \"What do you think you’re doing?!\""
+    advNarrator "\"Saving her, of course. You and your crew did kidnap her, after all. It’s only natural to want to rescue her and bring her back to where she belongs.\""
+    advNarrator "A shiver runs through me. Back... to where I belong?"
+    advNarrator "\"Although,\" she continues, \"now that she doesn’t have a home to return to, I guess I’ll just have to offer her the next best thing.\""
+    advNarrator "\"I’m not going to let you take her,\" Jobber growls."
+    advNarrator "\"I usually get what I want.\" The woman takes a step toward me."
+    advNarrator "Jobber raises her right hand in front of her and points a finger at the woman. The patterns on her coat begin to glow a soft blue. I feel it again: a tingling running down my spine like electricity, making my blood pump faster, my muscles tense up. \"Over my dead body.\""
+    advNarrator "\"Fine then. Have it your way.\""
+
+    play sound "sounds/finger_snap.ogg"
+    pause 0.2
+    play sound "sounds/bone_breaking.ogg"
+
+    advNarrator "The woman snaps her fingers, causing Jobber to lower her hand with a yelp."
+    advNarrator "Jobber clutches her right hand with her left. That sound, it had been as clear as day: her hand is broken, that I know without a doubt. Even without hearing the bones break, the way she held her hand made it obvious."
+    advNarrator "Jobber lets go of her crippled hand, letting it hang uselessly at her side. She lifts up her left hand, but the movement is slow, unsteady. The woman snaps her fingers again."
+
+    play sound "sounds/finger_snap.ogg"
+    pause 0.2
+    play sound "sounds/bone_breaking.ogg"
+
+    advNarrator "Now both of Jobber’s hands are broken. She is disarmed (quite literally), out of options. Her eyes, however, are no less ferocious."
+    advNarrator "The woman sighs. \"Honestly, you’re beginning to bore me. I was expecting a lot more out of you.\" Once again, the woman snaps her fingers. This time, however, something feels different."
+
+    play sound "sounds/finger_snap.ogg"
+
+    advNarrator "Jobber cries out. It sounds as if she is in extreme pain. She didn’t even make these sounds when her hands were being broken."
+    advNarrator "\"No...\" Jobber mutters. \"Not like this...\" She gingerly raises her hands and stares down at them in disbelief. I watch in morbid interest as all of her skin begins taking on an unhealthy shade of red."
+
+    advNarrator "\"Please, stop it...\" Small lumps begin forming all over her hands and face. I realize in horror that they are boils, the kind that are caused by severe burns."
+
+
+
+    advNarrator "\"Please! Help me!\" Jobber is whimpering now. She is trying her hardest to scream but her throat sounds raspy, as if she has been smoking all her life. \"Please... Not this again...\""
+    advNarrator "I will my body to move, to help her, but I can only sit there, frozen in shock and fascination."
+    advNarrator "It happens so suddenly. Her skin bursts open like sausages over an open flame. Leaking out of every crack in her skin emerges a flame, licking and lapping at Jobber’s body, consuming her."
+
+    play sound "sounds/fire_burning.ogg"
+
+    advNarrator "The woman clicks her tongue. \"Such a shame. Her life really did start and end in the flames.\""
+    advNarrator "As I sit there, speechless from the horror of it all, the woman turns her attention toward me. She bends down and offers me a hand, smiling."
+
+
+
+    advNarrator "This smile... This one is genuine. It isn’t like the one she had been wearing earlier... No, that was nothing but a mask. This... This is her real smile."
+    advNarrator "\"So, what do you say? You have nowhere to turn to. The Mages’ Society has been dealt with and your home has abandoned you. Will you allow me to nurture you, pamper you, to tend to your every need and want? If you say it, you will be mine and I will be yours."
+    advNarrator "So, tell me..."
+    advNarrator "\"Will you accept me as your mother?\""
+
+    stop sound
+    stop music
 
     return
