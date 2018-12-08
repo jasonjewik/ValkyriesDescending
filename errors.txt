@@ -2,10 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 114: invalid syntax
-    elif (firstChoice = WHERE_ARE_WE_HEADED):
-                       ^
+File "game/script.rpy", line 98: expected an indented block
+    else:
+    
+
+File "game/script.rpy", line 104: expected an indented block
+    else:
     
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Fri Dec 07 09:44:02 2018
+Sat Dec 08 12:29:47 2018
