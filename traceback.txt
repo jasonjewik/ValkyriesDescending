@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 111, in script
+  File "game/script.rpy", line 100, in script
     python:
-  File "game/script.rpy", line 113, in <module>
-    renpy.jump(choice1_0)
-NameError: name 'choice1_0' is not defined
+  File "game/script.rpy", line 101, in <module>
+    if (firstChoice != WHERE_AM_I):
+NameError: name 'firstChoice' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 111, in script
+  File "game/script.rpy", line 100, in script
     python:
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 882, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\python.py", line 1913, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 113, in <module>
-    renpy.jump(choice1_0)
-NameError: name 'choice1_0' is not defined
+  File "game/script.rpy", line 101, in <module>
+    if (firstChoice != WHERE_AM_I):
+NameError: name 'firstChoice' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Fri Dec 07 09:46:03 2018
+Sat Dec 08 12:19:35 2018

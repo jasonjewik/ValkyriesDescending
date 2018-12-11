@@ -8,11 +8,10 @@ define advNarrator = Character(None, kind=adv)
 
 define menu = nvl_menu
 
-init python:
-    firstChoice = -1
-    loop = True
-    WHERE_AM_I = 0
-    WHERE_ARE_WE_HEADED = 1
+define firstChoice = -1
+define loop = 0
+define WHERE_AM_I = 0
+define WHERE_ARE_WE_HEADED = 1
 
 # The game starts here.
 
@@ -84,71 +83,68 @@ label start:
     show hanamaru_05_01 at truecenter
     advNarrator "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
 
+    """
+    Why is she so concerned my well-being if she is the one who kidnapped me? Maybe hostages in good condition sell for more? Or could she be trying to keep my organs in working order?
 
-    label choice1_menu:
-        """
-        Why is she so concerned my well-being if she is the one who kidnapped me? Maybe hostages in good condition sell for more? Or could she be trying to keep my organs in working order?
+	Good question: why was I kidnapped? I need to gather more information. Seeing as my mouth is uncovered and my ability to speak is unimpeded, I ask...
+    """
 
-    	Good question: why was I kidnapped? I need to gather more information. Seeing as my mouth is uncovered and my ability to speak is unimpeded, I ask...
-        """
-
-        menu:
-            "Where am I?":
-                python:
-                    if (firstChoice != WHERE_AM_I):
-                        firstChoice = WHERE_AM_I
-            "Where are we going?":
-                python:
-                    if (firstChoice != WHERE_ARE_WE_HEADED):
-                        firstChoice = WHERE_ARE_WE_HEADED
-
-        python:
-            if loop:
-                renpy.say(advNarrator, "{i}Let's start with that{/i}, I decide.")
-            else:
-                renpy.say(advNarrator, "{i}I guess I might as well ask that next{/i}, I think.")
+label .choice1_menu:
+    menu:
+        "Where am I?" if (firstChoice != WHERE_AM_I):
+            python:
+                firstChoice = WHERE_AM_I
+        "Where are we going?" if (firstChoice != WHERE_ARE_WE_HEADED):
+            python:                
+                firstChoice = WHERE_ARE_WE_HEADED
 
     python:
-        if (firstChoice == WHERE_AM_I):
-            renpy.jump(choice1_0)
-        elif (firstChoice == WHERE_ARE_WE_HEADED):
-            renpy.jump(choice1_1)
+        if (loop == 0):
+            renpy.say(advNarrator, "{i}Let's start with that{/i}, I decide.")
+        else:
+            renpy.say(advNarrator, "{i}I guess I might as well ask that next{/i}, I think.")
 
-    label choice1_0:
-        python:
-            if loop:
-                renpy.say(advNarrator, "The woman's smile grows wider, but her eyes are filled with a different emotion... Pity, maybe?")
-            else:
-                renpy.say(advNarrator, "Jobber's smile grows wider, but her eyes are filled with a different emotion... Pity, maybe?")
-            renpy.say(advNarrator, "\"Don’t worry, you’re still in Moroes City. You woke up pretty quickly, to be honest. We’ve only just left your apartment; only an hour has passed, at most. I know you’re special, but even I’m impressed by how quickly you recover.\" She giggles.")
-            renpy.say(advNarrator, "\"What’s so funny?\"")
-            renpy.say(advNarrator, "\"This reminds me of one of my favorite legends. Do you know of the Celtic hero Cú Chulainn?\"")
-            renpy.say(advNarrator, "\"He also woke up far too early when he was put under. That landed him in a spot of trouble... Well, I’m sure that nothing like that will happen here.\" On that ominous note, she stops talking.")
-            if loop:
-                renpy.jump(choice1_menu)
-                loop = False
-            else:
-                renpy.jump(choice1_merge)
-    label choice1_1:
-        python:
-            renpy.say(advNarrator, "\"We’re heading to a private airfield where you can board a plane so that we can get you to our headquarters. That would be...\"")
-            renpy.say(advNarrator, "She looks over at a man standing next to her. He is clad in a black trenchcoat, like the ones that the characters wore in that one movie about magic, flying, karate-wielding computer hackers. Had he been the one she had been talking to earlier?")
-            renpy.say(advNarrator, "\"Where is it again? It’s on Alcatraz Island, right?\"")
-            renpy.say(advNarrator, "The man sighs.")
-            renpy.say(advNarrator, "\"With all due respect, Agent Jobber, you’re an American: you should at least know this much. Additionally, as an international agent, you would do well to learn where all of the regional bases of operation are.\"")
-            renpy.say(advNarrator, "He sounds exasperated, as if he has to deal with this level of incompetence on a regular.")
-            renpy.say(advNarrator,"\"But, all that aside, yes,\" he says, straightening his sunglasses in an effort to regain his composure, \"the American Mages’ Society headquarters is located on Alcatraz Island.\"")
-            renpy.say(advNarrator, "\"There you have it!\" the woman, whose name I knew as Jobber, said, looking back at me, beaming. She did not seem even slightly fazed by the man’s exasperated tone.")
-            renpy.say(advNarrator, "\"You heard the man! We’re headed to Alcatraz! Isn’t that exciting? It’s quite a popular tourist destination, you know. It’ll be fun, I promise!\"")
-            if loop:
-                renpy.jump(choice1_menu)
-                loop = False
-            else:
-                renpy.jump(choice1_merge)
+    if (firstChoice == WHERE_AM_I):
+        jump .choice1_0
+    elif (firstChoice == WHERE_ARE_WE_HEADED):
+        jump .choice1_1
 
-    label choice1_merge:
-        # remerges back into the story
-        nvl clear
+label .choice1_0:
+    python:
+        if (loop == 0):
+            renpy.say(advNarrator, "The woman's smile grows wider, but her eyes are filled with a different emotion... Pity, maybe?")
+        else:
+            renpy.say(advNarrator, "Jobber's smile grows wider, but her eyes are filled with a different emotion... Pity, maybe?")
+        renpy.say(advNarrator, "\"Don’t worry, you’re still in Moroes City. You woke up pretty quickly, to be honest. We’ve only just left your apartment; only an hour has passed, at most. I know you’re special, but even I’m impressed by how quickly you recover.\" She giggles.")
+        renpy.say(advNarrator, "\"What’s so funny?\"")
+        renpy.say(advNarrator, "\"This reminds me of one of my favorite legends. Do you know of the Celtic hero Cú Chulainn?\"")
+        renpy.say(advNarrator, "\"He also woke up far too early when he was put under. That landed him in a spot of trouble... Well, I’m sure that nothing like that will happen here.\" On that ominous note, she stops talking.")
+    if (loop == 0):
+        $ loop = 1
+        jump .choice1_menu
+    else:
+        jump .choice1_merge
+
+label .choice1_1:
+    python:
+        renpy.say(advNarrator, "\"We’re heading to a private airfield where you can board a plane so that we can get you to our headquarters. That would be...\"")
+        renpy.say(advNarrator, "She looks over at a man standing next to her. He is clad in a black trenchcoat, like the ones that the characters wore in that one movie about magic, flying, karate-wielding computer hackers. Had he been the one she had been talking to earlier?")
+        renpy.say(advNarrator, "\"Where is it again? It’s on Alcatraz Island, right?\"")
+        renpy.say(advNarrator, "The man sighs.")
+        renpy.say(advNarrator, "\"With all due respect, Agent Jobber, you’re an American: you should at least know this much. Additionally, as an international agent, you would do well to learn where all of the regional bases of operation are.\"")
+        renpy.say(advNarrator, "He sounds exasperated, as if he has to deal with this level of incompetence on a regular.")
+        renpy.say(advNarrator,"\"But, all that aside, yes,\" he says, straightening his sunglasses in an effort to regain his composure, \"the American Mages’ Society headquarters is located on Alcatraz Island.\"")
+        renpy.say(advNarrator, "\"There you have it!\" the woman, whose name I knew as Jobber, said, looking back at me, beaming. She did not seem even slightly fazed by the man’s exasperated tone.")
+        renpy.say(advNarrator, "\"You heard the man! We’re headed to Alcatraz! Isn’t that exciting? It’s quite a popular tourist destination, you know. It’ll be fun, I promise!\"")
+    if (loop == 0):
+        $ loop = 1
+        jump .choice1_menu
+    else:
+        jump .choice1_merge
+
+label .choice1_merge:
+    # merges back into the story
+    nvl clear
 
     """
     She is a whimsical one, that much I can tell. She does not exactly seem great at her job. Is she really an adult? I always thought that adults would take their jobs much more seriously, have a stiff upper lip, and hate the very concept of \"fun\".
