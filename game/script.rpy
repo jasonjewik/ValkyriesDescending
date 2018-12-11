@@ -16,13 +16,8 @@ init python:
 
 # The game starts here.
 
-label splashscreen:
-    stop music
-    show splashscreen
-    pause 3
-
 label start:
-    hide splashscreen
+    stop music
 
     """
     I never really thought of myself as anything but ordinary. My story... No, it’s not one worth telling. Not at all. The paper it would be written on is worth more than the tale itself. At least, that’s how I feel. And yet, you’re here...
