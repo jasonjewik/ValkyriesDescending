@@ -14,6 +14,10 @@ define WHERE_AM_I = 0
 define WHERE_ARE_WE_HEADED = 1
 
 # The game starts here.
+label splashscreen:
+    show splash
+    pause 3.0
+    return
 
 label start:
     stop music
@@ -95,7 +99,7 @@ label .choice1_menu:
             python:
                 firstChoice = WHERE_AM_I
         "Where are we going?" if (firstChoice != WHERE_ARE_WE_HEADED):
-            python:                
+            python:
                 firstChoice = WHERE_ARE_WE_HEADED
 
     python:
@@ -316,7 +320,12 @@ label .choice1_merge:
     advNarrator "So, tell me..."
     advNarrator "\"Will you accept me as your mother?\""
 
+    jump .end
+
+label .end:
     stop sound
     stop music
+    show end
+    pause 2.0
 
     return
