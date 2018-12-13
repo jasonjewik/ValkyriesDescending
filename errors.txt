@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 98: expected an indented block
-    else:
-    
-
-File "game/script.rpy", line 104: expected an indented block
-    else:
-    
+File "game/screens.rpy", line 583: expected 'simple_expression' not found.
+    xpos
+        ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sat Dec 08 12:29:47 2018
+Thu Dec 13 09:46:06 2018

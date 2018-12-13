@@ -1,26 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 100, in script
-    python:
-  File "game/script.rpy", line 101, in <module>
-    if (firstChoice != WHERE_AM_I):
-NameError: name 'firstChoice' is not defined
+After initialization, but before game start.
+  File "renpy/common/00start.rpy", line 79, in _init_language
+    renpy.change_language(language)
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: Style u'b' does not exist.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 100, in script
-    python:
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 882, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\python.py", line 1913, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/script.rpy", line 101, in <module>
-    if (firstChoice != WHERE_AM_I):
-NameError: name 'firstChoice' is not defined
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 513, in main
+    run(restart)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 71, in run
+    renpy.translation.init_translation()
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\translation\__init__.py", line 547, in init_translation
+    renpy.store._init_language()  # @UndefinedVariable
+  File "renpy/common/00start.rpy", line 79, in _init_language
+    renpy.change_language(language)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\translation\__init__.py", line 630, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 795, in renpy.style.rebuild
+  File "style.pyx", line 788, in renpy.style.build_styles
+  File "style.pyx", line 679, in renpy.style.build_style
+  File "style.pyx", line 142, in renpy.style.get_full_style
+  File "style.pyx", line 83, in renpy.style.get_style
+Exception: Style u'b' does not exist.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Sat Dec 08 12:19:35 2018
+Thu Dec 13 09:54:57 2018

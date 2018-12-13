@@ -381,6 +381,8 @@ screen alt_navigation():
             ## The quit button is banned on iOS and unnecessary on Android.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
+        textbutton _("Return") style "alt_return_button" action Return()
+
 style navigation_button is gui_button
 style alt_navigation_button is gui_alt_button
 style navigation_button_text is gui_button_text
@@ -519,11 +521,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use alt_navigation
 
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
     label title
 
     if main_menu:
@@ -541,6 +538,7 @@ style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
 
 style return_button is navigation_button
+style alt_return_button is gui_alt_button
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
@@ -581,6 +579,9 @@ style return_button:
     yalign 1.0
     yoffset -45
 
+style alt_return_button:
+    yalign 1.0
+    yoffset 150
 
 ## About screen ################################################################
 ##
