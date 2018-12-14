@@ -40,7 +40,7 @@ label start:
 
     play sound "sounds/stabbing_spear.ogg"
     show red_bg
-    pause 0.2
+    pause 0.3
 
     show black_bg
     pause 1.0
@@ -71,7 +71,7 @@ label start:
     play music "sounds/car_on_road_muffled.ogg" fadein 4.0
     advNarrator "{i}Voices: one woman, one man...{/i}"
 
-    scene white_bg
+    scene white_bg with fade
 
     """
     The sudden brightness catches me off guard, forcing my eyes to close. When I finally manage to open them just a bit without searing my retinas, I spy a kind-looking face.
