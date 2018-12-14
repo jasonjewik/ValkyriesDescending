@@ -77,8 +77,9 @@ label start:
     The sudden brightness catches me off guard, forcing my eyes to close. When I finally manage to open them just a bit without searing my retinas, I spy a kind-looking face.
     """
     nvl clear
+    window hide
 
-    scene alley with fade
+    scene alley with dissolve
     show hanamaru_05_03 at truecenter
 
     advNarrator "\"Hey there! You alright?\""
@@ -234,12 +235,12 @@ label .choice1_merge:
 
     advNarrator "Even with my eyes pressed shut, the flash is blinding, like an instant sunrise. I feel myself being violently pulled by my collar backward. I hear a surprised yelp followed shortly by an explosion. \"You aren’t hurt, are you? Get up!\""
 
-    scene alley with fade
+    scene alley with dissolve
     show hanamaru_05_03
 
     advNarrator "\"I’m fine,\" I manage to groan out. It is a complete and utter lie: my throat feels as if it were crushed from getting pulled back so suddenly with such force."
     advNarrator "Jobber smiles. \"That’s a relief. I was worried that I pulled too hard on your collar.\""
-    advNarrator "You did. You totally did. In fact, I can still feel the pressure around my neck as we speak."
+    advNarrator "\"You did. You totally did. In fact, I can still feel the pressure around my neck as we speak.\""
     advNarrator "\"But if you say you’re fine, then I’m sure that you’re fine!\""
     advNarrator "I let it go. \"Where are we?\" I wheeze out raspily, rubbing my neck with my hand. I can still feel a slight indentation in the flesh, feel the pumping under my skin as blood rushes to return to the region. I hope this isn’t permanent."
     advNarrator "\"An alleyway. I’m sorry, it looks like someone is after you.\""
