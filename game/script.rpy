@@ -13,6 +13,8 @@ define loop = 0
 define WHERE_AM_I = 0
 define WHERE_ARE_WE_HEADED = 1
 
+image diantheCGsketch = "images/diantheCGsketch.png"
+
 # The game starts here.
 label splashscreen:
     show splash
@@ -192,7 +194,9 @@ label .choice1_merge:
     advNarrator "\"Get down!\" Jobber yells as she roughly pushes me to the floor of the van. She is not a moment too soon; another bullet just barely grazes the top of my head. I think I can see the single strand of hair that was shredded in the incident falling before my eyes."
     advNarrator "Jobber puts her hand to the metal partition that separates the back of the van from the driver and passenger seats but pulls back abruptly with a yelp. She stares at her angry red palm in surprise. \"Heat?\" she whispers out. Her eyes widen in fear. \"Fire?\""
 
+    scene diantheCGsketch with dissolve
     play sound "sounds/metal_melting.ogg"
+    pause
 
     """
     A girl. Through the melted pool of steel and aluminum lying at the floor of the van steps a girl. Something about her captivated me. Her eyes, purple like amethysts. Purple? Is having purple eyes even naturally possible?
@@ -202,6 +206,9 @@ label .choice1_merge:
     She enters without a sound. Her walking is so graceful that it almost did not seem like she was walking at all. Floating, no, hovering almost. It would not surprise me at all if this girl is just some ephemeral hallucination of mine.
     """
     nvl clear
+
+    scene alley with dissolve
+    show hanamaru_05_03 at truecenter
 
     advNarrator "The girl casually waves the assault rifle she is carrying in my direction. \"I’m here for her,\" she says in a soft, monotone voice."
     advNarrator "She speaks. Even her voice sounds like an illusion!"
