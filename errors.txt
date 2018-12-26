@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 195: expected 'image_name_component' not found.
-    scene "images/diantheCGsketch.png" with dissolve
-          ^
+File "game/script.rpy", line 22: expected statement.
+    text prologueText = Text("Apocryphal Provenance")
+                      ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Dec 19 09:43:51 2018
+Wed Dec 26 07:48:09 2018

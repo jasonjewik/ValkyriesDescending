@@ -1,41 +1,76 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 79, in _init_language
-    renpy.change_language(language)
-  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
-    __update()
-  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
-    renpy.style.rebuild()
-Exception: Style u'b' does not exist.
+While running game code:
+  File "game/script.rpy", line 35, in script
+    pause 3.0
+  File "renpy/common/000statements.rpy", line 414, in execute_pause
+    renpy.with_statement(Pause(delay))
+Exception: Could not find font u'gui.interface_text_font'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 513, in main
-    run(restart)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 71, in run
-    renpy.translation.init_translation()
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\translation\__init__.py", line 547, in init_translation
-    renpy.store._init_language()  # @UndefinedVariable
-  File "renpy/common/00start.rpy", line 79, in _init_language
-    renpy.change_language(language)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\translation\__init__.py", line 630, in change_language
-    i()
-  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
-    __update()
-  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
-    renpy.style.rebuild()
-  File "style.pyx", line 795, in renpy.style.rebuild
-  File "style.pyx", line 788, in renpy.style.build_styles
-  File "style.pyx", line 679, in renpy.style.build_style
-  File "style.pyx", line 142, in renpy.style.get_full_style
-  File "style.pyx", line 83, in renpy.style.get_style
-Exception: Style u'b' does not exist.
+  File "game/script.rpy", line 35, in script
+    pause 3.0
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1859, in execute
+    self.call("execute")
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1847, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\statements.py", line 179, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 414, in execute_pause
+    renpy.with_statement(Pause(delay))
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\exports.py", line 1456, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2217, in do_with
+    clear=clear)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 3148, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2065, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 487, in renpy.display.render.render_screen
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\layout.py", line 719, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\transition.py", line 87, in render
+    return null_render(self, width, height, st, at)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\transition.py", line 61, in null_render
+    st, at)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\layout.py", line 719, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\layout.py", line 719, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\image.py", line 497, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\image.py", line 306, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\text.py", line 1845, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\text.py", line 587, in __init__
+    glyphs = ts.glyphs(s, self)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\text.py", line 240, in glyphs
+    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\font.py", line 695, in get_font
+    face = load_face(fn)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\font.py", line 636, in load_face
+    raise Exception("Could not find font {0!r}.".format(orig_fn))
+Exception: Could not find font u'gui.interface_text_font'.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Thu Dec 13 09:54:57 2018
+Wed Dec 26 07:55:13 2018

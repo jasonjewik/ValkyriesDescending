@@ -8,12 +8,18 @@ define advNarrator = Character(None, kind=adv)
 
 define menu = nvl_menu
 
+define quick_menu = True
+
 define firstChoice = -1
 define loop = 0
 define WHERE_AM_I = 0
 define WHERE_ARE_WE_HEADED = 1
 
 image diantheCGsketch = "images/diantheCGsketch.png"
+image JobberNeutral = "images/JobberNeutral.png"
+image chapterScreenMockup = "images/chapter_screen_mockup.png"
+
+image chapterTitleText = ParameterizedText(xalign = 0.8, yalign = 0.9, font = gui.interface_text_font, size = gui.title_text_size)
 
 # The game starts here.
 label splashscreen:
@@ -23,6 +29,13 @@ label splashscreen:
 
 label start:
     stop music
+    $ quick_menu = False
+    show chapterScreenMockup with fade
+    show chapterTitleText "Prologue:\nApocryphal Provenance" with dissolve
+    pause 3.0
+    hide chapterTitleText with dissolve
+    hide chapterScreenMockup with fade
+    $ quick_menu = True
 
     """
     I never really thought of myself as anything but ordinary. My story... No, it’s not one worth telling. Not at all. The paper it would be written on is worth more than the tale itself. At least, that’s how I feel. And yet, you’re here...
@@ -82,7 +95,7 @@ label start:
     window hide
 
     scene alley with dissolve
-    show hanamaru_05_03 at truecenter
+    show JobberNeutral at truecenter
 
     advNarrator "\"Hey there! You alright?\""
     advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"
