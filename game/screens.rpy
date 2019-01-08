@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -406,9 +405,10 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    style_prefix "main_menu"
-
     add gui.main_menu_background
+    add gui.main_menu_overlay
+
+    style_prefix "main_menu"
 
     ## This empty frame darkens the main menu.
     frame:
@@ -426,7 +426,6 @@ screen main_menu():
 
             # text "[config.version]":
                 # style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox

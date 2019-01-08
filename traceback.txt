@@ -1,29 +1,47 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 35, in script
-    pause 3.0
-  File "renpy/common/000statements.rpy", line 414, in execute_pause
-    renpy.with_statement(Pause(delay))
-Exception: Could not find font u'gui.interface_text_font'.
+While loading <'FactorScale' <'Recolor' <'Image' u'snowflake'> 255 255 255 204 True> 0.8 0.8 True>:
+  File "renpy/common/00start.rpy", line 264, in script
+    python:
+  File "renpy/common/00start.rpy", line 268, in <module>
+    renpy.call_in_new_context("_main_menu")
+IOError: Couldn't find file 'snowflake'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 35, in script
-    pause 3.0
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1859, in execute
-    self.call("execute")
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1847, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\statements.py", line 179, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 414, in execute_pause
-    renpy.with_statement(Pause(delay))
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\exports.py", line 1456, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2217, in do_with
-    clear=clear)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\main.py", line 513, in main
+    run(restart)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\main.py", line 139, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\execution.py", line 876, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 264, in script
+    python:
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/00start.rpy", line 268, in <module>
+    renpy.call_in_new_context("_main_menu")
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\game.py", line 333, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\execution.py", line 876, in run_context
+    context.run()
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2662, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
   File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 3148, in interact_core
@@ -36,12 +54,6 @@ Full traceback:
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 147, in renpy.display.render.render
   File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\transition.py", line 87, in render
-    return null_render(self, width, height, st, at)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\transition.py", line 61, in null_render
-    st, at)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
   File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\layout.py", line 719, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 147, in renpy.display.render.render
@@ -50,7 +62,13 @@ Full traceback:
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 147, in renpy.display.render.render
   File "render.pyx", line 235, in renpy.display.render.render
-  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\screen.py", line 669, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\layout.py", line 719, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
   File "render.pyx", line 235, in renpy.display.render.render
   File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\image.py", line 497, in render
     return wrap_render(self.target, width, height, st, at)
@@ -58,19 +76,33 @@ Full traceback:
     rend = render(child, w, h, st, at)
   File "render.pyx", line 147, in renpy.display.render.render
   File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\text.py", line 1845, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\text.py", line 587, in __init__
-    glyphs = ts.glyphs(s, self)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\text.py", line 240, in glyphs
-    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\font.py", line 695, in get_font
-    face = load_face(fn)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\text\font.py", line 636, in load_face
-    raise Exception("Could not find font {0!r}.".format(orig_fn))
-Exception: Could not find font u'gui.interface_text_font'.
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\particle.py", line 417, in render
+    return renpy.display.render.render(self.sm, w, h, st, at)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\particle.py", line 280, in render
+    cache.render = r = render(cache.child_copy, width, height, cst, cst)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 580, in render
+    return cache.get(self, render=True)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 860, in load
+    surf = cache.get(self.image)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 1150, in load
+    surf = cache.get(self.image)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\im.py", line 625, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'snowflake'.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Wed Dec 26 07:55:13 2018
+Mon Dec 31 11:41:02 2018

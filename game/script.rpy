@@ -16,7 +16,10 @@ define WHERE_AM_I = 0
 define WHERE_ARE_WE_HEADED = 1
 
 image diantheCGsketch = "images/diantheCGsketch.png"
-image JobberNeutral = "images/JobberNeutral.png"
+image Jobber_L = "images/JobberL_Resized.png"
+image Jobber_R = "images/JobberR_Resized.png"
+image JobberIn_L = "images/JobberInjuredL.png"
+image JobberIn_R = "images/JobberInjuredR.png"
 image chapterScreenMockup = "images/chapter_screen_mockup.png"
 
 image chapterTitleText = ParameterizedText(xalign = 0.8, yalign = 0.9, font = gui.interface_text_font, size = gui.title_text_size)
@@ -95,12 +98,11 @@ label start:
     window hide
 
     scene alley with dissolve
-    show JobberNeutral at truecenter
+    show Jobber_L at truecenter
 
     advNarrator "\"Hey there! You alright?\""
     advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"
     advNarrator "\"I-I’m fine.\" {i}She kidnapped me, right? Why is she acting so nice to me?{/i}"
-    show hanamaru_05_01 at truecenter
     advNarrator "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
 
     """
@@ -207,7 +209,12 @@ label .choice1_merge:
     advNarrator "\"Get down!\" Jobber yells as she roughly pushes me to the floor of the van. She is not a moment too soon; another bullet just barely grazes the top of my head. I think I can see the single strand of hair that was shredded in the incident falling before my eyes."
     advNarrator "Jobber puts her hand to the metal partition that separates the back of the van from the driver and passenger seats but pulls back abruptly with a yelp. She stares at her angry red palm in surprise. \"Heat?\" she whispers out. Her eyes widen in fear. \"Fire?\""
 
-    scene diantheCGsketch with dissolve
+    show diantheCGsketch with dissolve:
+        ## test panning code ##
+        # subpixel True
+        # zoom 2.0
+        # yalign 0.0
+        # linear 3.0 yalign 1.0
     play sound "sounds/metal_melting.ogg"
     pause
 
@@ -221,7 +228,7 @@ label .choice1_merge:
     nvl clear
 
     scene alley with dissolve
-    show hanamaru_05_03 at truecenter
+    show Jobber_R at truecenter
 
     advNarrator "The girl casually waves the assault rifle she is carrying in my direction. \"I’m here for her,\" she says in a soft, monotone voice."
     advNarrator "She speaks. Even her voice sounds like an illusion!"
@@ -239,9 +246,6 @@ label .choice1_merge:
     pause 0.1
     play sound "sounds/gunshot_assault_rifle.ogg"
 
-    hide hanamaru_05_03
-    show hanamaru_05_01
-
     advNarrator "The smell of spent gunpowder fills the air. The sounds of the wind grow louder, no doubt because of the holes that now pepper the back of the van."
     advNarrator "\"Please,\" the girl asks again, punctuating the request by pointing the rifle at Jobber."
     advNarrator "Jobber lets out a long, dramatic sigh. She slowly raises her hands to the air. \"Alright, you win. Take her.\""
@@ -250,13 +254,12 @@ label .choice1_merge:
     advNarrator "Jobber stoops down and lowers her hands slowly, still indicating that she is unarmed and non-hostile. Once her mouth is right next to my ear, she whispers, \"Close your eyes.\""
     advNarrator "I do not know why, but I do as she tells me to."
 
-    hide hanamaru_05_01
     show white_bg
 
     advNarrator "Even with my eyes pressed shut, the flash is blinding, like an instant sunrise. I feel myself being violently pulled by my collar backward. I hear a surprised yelp followed shortly by an explosion. \"You aren’t hurt, are you? Get up!\""
 
     scene alley with dissolve
-    show hanamaru_05_03
+    show Jobber_R
 
     advNarrator "\"I’m fine,\" I manage to groan out. It is a complete and utter lie: my throat feels as if it were crushed from getting pulled back so suddenly with such force."
     advNarrator "Jobber smiles. \"That’s a relief. I was worried that I pulled too hard on your collar.\""
@@ -285,8 +288,8 @@ label .choice1_merge:
     advNarrator "\"No, no, it’s fine!\" Jobber reassures me, waving her hands in front of her quickly. \"Well,\" she starts slowly, \"I’m not sure. Fire and I have... well, the two of us go way back. I think that’s a good way to put it. It’s given, it’s taken. Really, it’s—\""
     advNarrator "\"It’s just beautiful, isn’t it?\""
 
-    show hanamaru_05_01 at right
-    show hanamaru_05_03 at left
+    show Jobber_L at right
+    show Jobber_R at left
 
     advNarrator "Both Jobber and I turn, searching for the source of the voice. A woman stands there, smirking."
     advNarrator "Jobber scowls. \"You!\""
@@ -323,18 +326,21 @@ label .choice1_merge:
 
     advNarrator "\"Please, stop it...\" Small lumps begin forming all over her hands and face. I realize in horror that they are boils, the kind that are caused by severe burns."
 
-
-
     advNarrator "\"Please! Help me!\" Jobber is whimpering now. She is trying her hardest to scream but her throat sounds raspy, as if she has been smoking all her life. \"Please... Not this again...\""
+
+    hide Jobber_L
+    show JobberIn_L at right
+
     advNarrator "I will my body to move, to help her, but I can only sit there, frozen in shock and fascination."
     advNarrator "It happens so suddenly. Her skin bursts open like sausages over an open flame. Leaking out of every crack in her skin emerges a flame, licking and lapping at Jobber’s body, consuming her."
 
     play sound "sounds/fire_burning.ogg"
 
+    hide JobberIn_L
+    show Jobber_R at truecenter
+
     advNarrator "The woman clicks her tongue. \"Such a shame. Her life really did start and end in the flames.\""
     advNarrator "As I sit there, speechless from the horror of it all, the woman turns her attention toward me. She bends down and offers me a hand, smiling."
-
-
 
     advNarrator "This smile... This one is genuine. It isn’t like the one she had been wearing earlier... No, that was nothing but a mask. This... This is her real smile."
     advNarrator "\"So, what do you say? You have nowhere to turn to. The Mages’ Society has been dealt with and your home has abandoned you. Will you allow me to nurture you, pamper you, to tend to your every need and want? If you say it, you will be mine and I will be yours."
