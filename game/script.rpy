@@ -99,6 +99,7 @@ label start:
 
     scene alley with dissolve
     show Jobber_L at truecenter
+    show screen clickable_test
 
     advNarrator "\"Hey there! You alright?\""
     advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"

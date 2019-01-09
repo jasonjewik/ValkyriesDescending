@@ -1392,7 +1392,6 @@ screen nvl_dialogue(dialogue):
                 text d.what:
                     id d.what_id
 
-
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
 define config.nvl_list_length = gui.nvl_list_length
@@ -1452,7 +1451,18 @@ style nvl_button:
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
 
+## Clickables Screen ##################################################################
+##
+## This screen is used for clickable elements.
+##
 
+screen clickable_test():
+    modal False
+    zorder 5
+    imagebutton:
+        idle "images/korok.jpg"
+        hover "images/korok_found.jpg"
+        action Notify("Accepted Korok seed.")
 
 ################################################################################
 ## Mobile Variants
