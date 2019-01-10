@@ -1,68 +1,62 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 104, in script
-    advNarrator "\"Hey there! You alright?\""
-  File "game/screens.rpy", line 1459, in execute
-    screen clickable_test():
-  File "game/screens.rpy", line 1459, in execute
-    screen clickable_test():
-  File "game/screens.rpy", line 1461, in execute
-    zorder 5
-  File "renpy/common/00defaults.rpy", line 120, in _imagemap_auto_function
-    rv = auto_param % variant
-TypeError: not all arguments converted during string formatting
+  File "renpy/common/00keymap.rpy", line 411, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 411, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 421, in _execute_python_hide
+    renpy.take_screenshot((config.thumbnail_width, config.thumbnail_height))
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 104, in script
-    advNarrator "\"Hey there! You alright?\""
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 678, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\exports.py", line 1204, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\character.py", line 1031, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\character.py", line 823, in do_display
-    **display_args)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\character.py", line 572, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 415, in main
+    if renpy.parser.report_parse_errors():
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\parser.py", line 2787, in report_parse_errors
+    renpy.display.error.report_parse_errors(full_text, error_fn)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\error.py", line 187, in report_parse_errors
+    error_fn=error_fn,
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\game.py", line 281, in invoke_in_new_context
+    return callable(*args, **kwargs)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\error.py", line 45, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
   File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\screen.py", line 424, in visit_all
-    callback(self)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\screen.py", line 434, in per_interact
-    self.update()
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1459, in execute
-    screen clickable_test():
-  File "game/screens.rpy", line 1459, in execute
-    screen clickable_test():
-  File "game/screens.rpy", line 1461, in execute
-    zorder 5
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ui.py", line 929, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ui.py", line 917, in choice
-    rv = renpy.config.imagemap_auto_function(auto, name)
-  File "renpy/common/00defaults.rpy", line 120, in _imagemap_auto_function
-    rv = auto_param % variant
-TypeError: not all arguments converted during string formatting
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 3122, in interact_core
+    renpy.exports.reload_script()
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\exports.py", line 1622, in reload_script
+    renpy.game.call_in_new_context("_save_reload_game")
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\game.py", line 333, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\execution.py", line 876, in run_context
+    context.run()
+  File "renpy/common/00keymap.rpy", line 411, in script
+    python hide:
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/00keymap.rpy", line 411, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 421, in _execute_python_hide
+    renpy.take_screenshot((config.thumbnail_width, config.thumbnail_height))
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\exports.py", line 1574, in take_screenshot
+    renpy.game.interface.take_screenshot(scale, background=background)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 2112, in take_screenshot
+    surf = renpy.display.scale.smoothscale(surf, scale)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\scale.py", line 95, in real_smoothscale
+    dest = pgrender.surface_unscaled(size, src)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\pgrender.py", line 118, in surface
+    surf = Surface((width + 4, height + 4), 0, sample)
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
-Valkyries Descending 1.0
-Wed Jan 09 09:57:48 2019
+ 
+Thu Jan 10 09:47:13 2019

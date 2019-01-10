@@ -1,27 +1,43 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
+##### Characters
 define narrator = nvl_narrator
 define advNarrator = Character(None, kind=adv)
 
+##### Menus
 define menu = nvl_menu
-
 define quick_menu = True
 
+##### Choices
+## First Choice
 define firstChoice = -1
 define loop = 0
 define WHERE_AM_I = 0
 define WHERE_ARE_WE_HEADED = 1
 
+###### Screens
 image diantheCGsketch = "images/diantheCGsketch.png"
+image chapterScreenMockup = "images/chapter_screen_mockup.png"
+
+##### Sprites
+## Jobber
 image Jobber_L = "images/JobberL_Resized.png"
 image Jobber_R = "images/JobberR_Resized.png"
 image JobberIn_L = "images/JobberInjuredL.png"
 image JobberIn_R = "images/JobberInjuredR.png"
-image chapterScreenMockup = "images/chapter_screen_mockup.png"
+## Dianthe
+image Dianthe_L = "images/DiantheL_Resized.png"
+image Dianthe_R = "images/DiantheR_Resized.png"
+image DiantheShock_L = "images/DiantheL_shock_Resized.png"
+image DiantheShock_R = "images/DiantheR_shock_Resized.png"
+## Mook
+image Mook_L = "images/MookL_Resized.png"
+image Mook_R = "images/MookR_Reized.png"
+image MookIn = "images/MookInjured_Resized.png"
+image MookBlood = "images/MookBlood_Resized.png"
+## Abra
+image Abra_L = "images/AbraL_Resized.png"
+image Abra_R = "images/AbraR_Resized.png"
 
+###### Text Variables
 image chapterTitleText = ParameterizedText(xalign = 0.8, yalign = 0.9, font = gui.interface_text_font, size = gui.title_text_size)
 
 # The game starts here.
@@ -98,13 +114,16 @@ label start:
     window hide
 
     scene alley with dissolve
-    show Jobber_L at truecenter
+    show Jobber_L
     show screen clickable_test
 
     advNarrator "\"Hey there! You alright?\""
     advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"
     advNarrator "\"I-I’m fine.\" {i}She kidnapped me, right? Why is she acting so nice to me?{/i}"
     advNarrator "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
+
+    hide screen clickable_test
+    $ renpy.notify("You didn't accept the Korok seed. >:(")
 
     """
     Why is she so concerned my well-being if she is the one who kidnapped me? Maybe hostages in good condition sell for more? Or could she be trying to keep my organs in working order?
@@ -229,7 +248,7 @@ label .choice1_merge:
     nvl clear
 
     scene alley with dissolve
-    show Jobber_R at truecenter
+    show Jobber_R
 
     advNarrator "The girl casually waves the assault rifle she is carrying in my direction. \"I’m here for her,\" she says in a soft, monotone voice."
     advNarrator "She speaks. Even her voice sounds like an illusion!"
@@ -246,6 +265,8 @@ label .choice1_merge:
     play sound "sounds/gunshot_assault_rifle.ogg"
     pause 0.1
     play sound "sounds/gunshot_assault_rifle.ogg"
+    hide Jobber_R
+    show Dianthe_R
 
     advNarrator "The smell of spent gunpowder fills the air. The sounds of the wind grow louder, no doubt because of the holes that now pepper the back of the van."
     advNarrator "\"Please,\" the girl asks again, punctuating the request by pointing the rifle at Jobber."
@@ -289,8 +310,8 @@ label .choice1_merge:
     advNarrator "\"No, no, it’s fine!\" Jobber reassures me, waving her hands in front of her quickly. \"Well,\" she starts slowly, \"I’m not sure. Fire and I have... well, the two of us go way back. I think that’s a good way to put it. It’s given, it’s taken. Really, it’s—\""
     advNarrator "\"It’s just beautiful, isn’t it?\""
 
-    show Jobber_L at right
     show Jobber_R at left
+    show Abra_L at right
 
     advNarrator "Both Jobber and I turn, searching for the source of the voice. A woman stands there, smirking."
     advNarrator "Jobber scowls. \"You!\""
@@ -308,6 +329,9 @@ label .choice1_merge:
     play sound "sounds/finger_snap.ogg"
     pause 0.2
     play sound "sounds/bone_breaking.ogg"
+
+    hide Jobber_R
+    show JobberIn_R at left
 
     advNarrator "The woman snaps her fingers, causing Jobber to lower her hand with a yelp."
     advNarrator "Jobber clutches her right hand with her left. That sound, it had been as clear as day: her hand is broken, that I know without a doubt. Even without hearing the bones break, the way she held her hand made it obvious."
@@ -330,15 +354,15 @@ label .choice1_merge:
     advNarrator "\"Please! Help me!\" Jobber is whimpering now. She is trying her hardest to scream but her throat sounds raspy, as if she has been smoking all her life. \"Please... Not this again...\""
 
     hide Jobber_L
-    show JobberIn_L at right
 
     advNarrator "I will my body to move, to help her, but I can only sit there, frozen in shock and fascination."
     advNarrator "It happens so suddenly. Her skin bursts open like sausages over an open flame. Leaking out of every crack in her skin emerges a flame, licking and lapping at Jobber’s body, consuming her."
 
     play sound "sounds/fire_burning.ogg"
 
-    hide JobberIn_L
-    show Jobber_R at truecenter
+    hide JobberIn_R
+    hide Abra_L
+    show Abra_R
 
     advNarrator "The woman clicks her tongue. \"Such a shame. Her life really did start and end in the flames.\""
     advNarrator "As I sit there, speechless from the horror of it all, the woman turns her attention toward me. She bends down and offers me a hand, smiling."

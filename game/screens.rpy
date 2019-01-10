@@ -1462,7 +1462,7 @@ screen clickable_test():
     imagebutton:
         idle "images/korok.jpg"
         hover "images/korok_found.jpg"
-        action Notify("Accepted Korok seed.")
+        action [Notify("Accepted Korok seed."), Hide("clickable_test", dissolve)]
 
 ################################################################################
 ## Mobile Variants
