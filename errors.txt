@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 232: expected statement.
-    renpy.transition(dissolve)
-                              ^
+File "game/screens.rpy", line 1478: u'xinitial' is not a keyword argument or valid child for the add statement.
+    add "images/diantheCGsketch.png" zoom 2.0 xinitial 0.5 yinitial 0.5
+                                                      ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Thu Jan 10 19:52:53 2019
+Fri Jan 11 09:28:24 2019

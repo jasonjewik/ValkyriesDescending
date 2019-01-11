@@ -1470,9 +1470,14 @@ screen clickable_test():
 screen viewport_test():
     modal False
 
-    viewport id "vp":
-        draggable True
-        add "images/diantheCGsketch.png" zoom 2.0
+    side "c":
+        area (0, 0, 1920, 1080)
+
+        viewport id "vp":
+            draggable True
+            xinitial 0.5
+            yinitial 0.5
+            add "images/diantheCGsketch.png" zoom 2.0
 
     textbutton "Continue" action [Hide("viewport_test"), Jump("postDianthe")] xalign 1.0 yalign 1.0
 

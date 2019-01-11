@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 235, in script
-    
-ScriptError: could not find label '.postDianthe'.
+After loading the script.
+WindowsError: [Error 32] The process cannot access the file because it is being used by another process: 'E:\\Game\\ValkyriesDescending\\game\\saves\\navigation.json'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\bootstrap.py", line 313, in bootstrap
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
     renpy.main.main()
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\main.py", line 513, in main
-    run(restart)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\main.py", line 139, in run
-    renpy.execution.run_context(True)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\execution.py", line 876, in run_context
-    context.run()
-  File "game/script.rpy", line 235, in script
-    
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\script.py", line 875, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label '.postDianthe'.
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 415, in main
+    if renpy.parser.report_parse_errors():
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\parser.py", line 2787, in report_parse_errors
+    renpy.display.error.report_parse_errors(full_text, error_fn)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\error.py", line 165, in report_parse_errors
+    error_dump()
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\error.py", line 79, in error_dump
+    renpy.dump.dump(True)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\dump.py", line 253, in dump
+    os.unlink(args.json_dump)
+WindowsError: [Error 32] The process cannot access the file because it is being used by another process: 'E:\\Game\\ValkyriesDescending\\game\\saves\\navigation.json'
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
-Valkyries Descending 1.0
-Thu Jan 10 19:59:04 2019
+ 
+Fri Jan 11 09:23:47 2019
