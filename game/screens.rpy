@@ -1451,10 +1451,12 @@ style nvl_button:
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
 
-## Clickables Screen ##################################################################
+## Clickable Screens ##################################################################
 ##
-## This screen is used for clickable elements.
+## These screens are used for clickable elements.
 ##
+init python:
+    screenX = 0.0
 
 screen clickable_test():
     modal False
@@ -1462,7 +1464,24 @@ screen clickable_test():
     imagebutton:
         idle "images/korok.jpg"
         hover "images/korok_found.jpg"
-        action [Notify("Accepted Korok seed."), Hide("clickable_test", dissolve)]
+        xalign screenX
+        action [SetVariable(screenX, 1.0), Notify("Accepted Korok seed.")]
+
+screen viewport_test():
+    modal False
+
+    viewport id "vp":
+        draggable True
+        add "images/diantheCGsketch.png" zoom 2.0
+
+    textbutton "Continue" action [Hide("viewport_test"), Jump("postDianthe")] xalign 1.0 yalign 1.0
+
+'''
+screen diantheNav():
+    modal False
+    zorder 5
+    imagebutton:
+'''
 
 ################################################################################
 ## Mobile Variants

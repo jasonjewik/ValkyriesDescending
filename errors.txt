@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 126: expected statement.
-    notify("You didn't accept the Korok seed. >:(")
-                                                   ^
+File "game/script.rpy", line 232: expected statement.
+    renpy.transition(dissolve)
+                              ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Thu Jan 10 09:47:20 2019
+Thu Jan 10 19:52:53 2019

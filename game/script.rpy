@@ -229,14 +229,13 @@ label .choice1_merge:
     advNarrator "\"Get down!\" Jobber yells as she roughly pushes me to the floor of the van. She is not a moment too soon; another bullet just barely grazes the top of my head. I think I can see the single strand of hair that was shredded in the incident falling before my eyes."
     advNarrator "Jobber puts her hand to the metal partition that separates the back of the van from the driver and passenger seats but pulls back abruptly with a yelp. She stares at her angry red palm in surprise. \"Heat?\" she whispers out. Her eyes widen in fear. \"Fire?\""
 
-    show diantheCGsketch with dissolve:
-        ## test panning code ##
-        # subpixel True
-        # zoom 2.0
-        # yalign 0.0
-        # linear 3.0 yalign 1.0
     play sound "sounds/metal_melting.ogg"
+    $ renpy.transition(dissolve)
+    show screen viewport_test
     pause
+
+label postDianthe:
+    show diantheCGsketch
 
     """
     A girl. Through the melted pool of steel and aluminum lying at the floor of the van steps a girl. Something about her captivated me. Her eyes, purple like amethysts. Purple? Is having purple eyes even naturally possible?
