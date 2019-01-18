@@ -1,26 +1,60 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After loading the script.
-WindowsError: [Error 32] The process cannot access the file because it is being used by another process: 'E:\\Game\\ValkyriesDescending\\game\\saves\\navigation.json'
+While running game code:
+  File "game/script.rpy", line 120, in script
+    advNarrator "\"Hey there! You alright?\""
+  File "renpy/common/00action_data.rpy", line 75, in __call__
+    __set_field(self.object, self.field, self.value, self.kind)
+  File "renpy/common/00action_data.rpy", line 44, in _m1_00action_data__set_field
+    fields, _, attr = name.rpartition(".")
+AttributeError: 'float' object has no attribute 'rpartition'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\main.py", line 415, in main
-    if renpy.parser.report_parse_errors():
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\parser.py", line 2787, in report_parse_errors
-    renpy.display.error.report_parse_errors(full_text, error_fn)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\error.py", line 165, in report_parse_errors
-    error_dump()
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\error.py", line 79, in error_dump
-    renpy.dump.dump(True)
-  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\dump.py", line 253, in dump
-    os.unlink(args.json_dump)
-WindowsError: [Error 32] The process cannot access the file because it is being used by another process: 'E:\\Game\\ValkyriesDescending\\game\\saves\\navigation.json'
+  File "game/script.rpy", line 120, in script
+    advNarrator "\"Hey there! You alright?\""
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ast.py", line 678, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\exports.py", line 1204, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\character.py", line 1031, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\character.py", line 823, in do_display
+    **display_args)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\character.py", line 572, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\core.py", line 3467, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\layout.py", line 995, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\layout.py", line 995, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\layout.py", line 995, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\screen.py", line 697, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\layout.py", line 995, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\behavior.py", line 907, in event
+    return handle_click(self.clicked)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\behavior.py", line 842, in handle_click
+    rv = run(action)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\behavior.py", line 308, in run
+    new_rv = run(i, *args, **kwargs)
+  File "C:\Users\Game\Desktop\renpy-7.1.1-sdk\renpy\display\behavior.py", line 315, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_data.rpy", line 75, in __call__
+    __set_field(self.object, self.field, self.value, self.kind)
+  File "renpy/common/00action_data.rpy", line 44, in _m1_00action_data__set_field
+    fields, _, attr = name.rpartition(".")
+AttributeError: 'float' object has no attribute 'rpartition'
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
- 
-Fri Jan 11 09:23:47 2019
+Valkyries Descending 1.0
+Thu Jan 17 16:25:38 2019

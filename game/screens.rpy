@@ -1465,7 +1465,7 @@ screen clickable_test():
         idle "images/korok.jpg"
         hover "images/korok_found.jpg"
         xalign screenX
-        action [SetVariable(screenX, 1.0), Notify("Accepted Korok seed.")]
+        action [Notify("Accepted Korok seed.")]
 
 screen viewport_test():
     modal False
