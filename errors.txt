@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1478: u'xinitial' is not a keyword argument or valid child for the add statement.
-    add "images/diantheCGsketch.png" zoom 2.0 xinitial 0.5 yinitial 0.5
-                                                      ^
+File "game/screens.rpy", line 1489: is not terminated with a newline. (Check strings and parenthesis.)
+            hotspot (0, 0, 500, 500) clicked [Notify("click!")] alternate [Notify("alt-click!")
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Fri Jan 11 09:28:24 2019
+Sat Jan 19 14:20:39 2019

@@ -1457,6 +1457,7 @@ style nvl_button_text:
 ##
 init python:
     screenX = 0.0
+    output = ""
 
 screen clickable_test():
     modal False
@@ -1467,26 +1468,20 @@ screen clickable_test():
         xalign screenX
         action [Notify("Accepted Korok seed.")]
 
-screen viewport_test():
+screen viewport_test(img, xi = 0.5, yi = 0.5, z = 1.0, xa = 0.5, ya = 0.5):
     modal False
+    viewport id "vp":
+        draggable True
+        xinitial xi
+        yinitial yi
+        add img zoom z xalign xa yalign ya
 
-    side "c":
-        area (0, 0, 1920, 1080)
+    textbutton "Continue" action [Hide("viewport_test"), Jump("postDianthe")] xalign 0.97 yalign 0.97
 
-        viewport id "vp":
-            draggable True
-            xinitial 0.5
-            yinitial 0.5
-            add "images/diantheCGsketch.png" zoom 2.0
-
-    textbutton "Continue" action [Hide("viewport_test"), Jump("postDianthe")] xalign 1.0 yalign 1.0
-
-'''
-screen diantheNav():
-    modal False
-    zorder 5
-    imagebutton:
-'''
+screen imagemap_test():
+    imagemap:
+        ground "images/diantheCGsketch.png"
+        hotspot (0, 0, 500, 500) clicked [Notify("click!")] alternate [Notify("alt-click!")]
 
 ################################################################################
 ## Mobile Variants

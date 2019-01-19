@@ -15,7 +15,7 @@ define WHERE_ARE_WE_HEADED = 1
 
 ###### Screens
 image diantheCGsketch = "images/diantheCGsketch.png"
-image chapterScreenMockup = "images/chapter_screen_mockup.png"
+image chapterScreenMockup = "images/chapterscreen.png"
 
 ##### Sprites
 ## Jobber
@@ -115,15 +115,11 @@ label start:
 
     scene alley with dissolve
     show Jobber_L
-    show screen clickable_test
 
     advNarrator "\"Hey there! You alright?\""
     advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"
     advNarrator "\"I-I’m fine.\" {i}She kidnapped me, right? Why is she acting so nice to me?{/i}"
     advNarrator "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
-
-    hide screen clickable_test
-    $ renpy.notify("You didn't accept the Korok seed. >:(")
 
     """
     Why is she so concerned my well-being if she is the one who kidnapped me? Maybe hostages in good condition sell for more? Or could she be trying to keep my organs in working order?
@@ -231,7 +227,9 @@ label .choice1_merge:
 
     play sound "sounds/metal_melting.ogg"
     $ renpy.transition(dissolve)
-    show screen viewport_test
+    # show screen viewport_test("diantheCGsketch", z = 2.0)
+    # show screen clickable_test
+    show screen imagemap_test
     pause
 
 label postDianthe:
