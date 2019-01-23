@@ -1483,6 +1483,13 @@ screen imagemap_test():
         ground "images/diantheCGsketch.png"
         hotspot (0, 0, 500, 500) clicked [Notify("click!")] alternate [Notify("alt-click!")]
 
+screen van_interior():
+    imagemap:
+        ground "images/van_interior.png"
+        hotspot (0, 0, 500, 1080) clicked [Jump("side_wall")]
+        hotspot (520, 700, 730, 380) clicked [Jump("floor")]
+        hotspot (1240, 0, 680, 1080) clicked [Jump("far_wall")]
+
 ################################################################################
 ## Mobile Variants
 ################################################################################

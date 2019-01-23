@@ -2,8 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1489: is not terminated with a newline. (Check strings and parenthesis.)
-            hotspot (0, 0, 500, 500) clicked [Notify("click!")] alternate [Notify("alt-click!")
+File "game/script.rpy", line 141: invalid syntax
+        scene vanInterior
+                         ^
+    
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sat Jan 19 14:20:39 2019
+Tue Jan 22 16:44:02 2019

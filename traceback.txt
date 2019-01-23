@@ -1,66 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 232, in script
-    pause
-  File "renpy/common/000statements.rpy", line 416, in execute_pause
-    renpy.pause()
-  File "game/screens.rpy", line 1471, in execute
-    viewport id "vp":
-  File "game/screens.rpy", line 1471, in execute
-    viewport id "vp":
-  File "game/screens.rpy", line 1479, in execute
-    hover "images/korok_found.jpg"
-  File "game/screens.rpy", line 1479, in <module>
-    hover "images/korok_found.jpg"
-NameError: name 'diantheCGsketch' is not defined
+  File "game/script.rpy", line 215, in script
+    jump .choice1_menu
+ScriptError: could not find label 'choice1_menu.choice1_menu'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 232, in script
-    pause
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1859, in execute
-    self.call("execute")
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1847, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\statements.py", line 179, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 416, in execute_pause
-    renpy.pause()
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\exports.py", line 1335, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2662, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 3049, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\screen.py", line 424, in visit_all
-    callback(self)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 3049, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\screen.py", line 434, in per_interact
-    self.update()
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1471, in execute
-    viewport id "vp":
-  File "game/screens.rpy", line 1471, in execute
-    viewport id "vp":
-  File "game/screens.rpy", line 1479, in execute
-    hover "images/korok_found.jpg"
-  File "game/screens.rpy", line 1479, in <module>
-    hover "images/korok_found.jpg"
-NameError: name 'diantheCGsketch' is not defined
+  File "game/script.rpy", line 215, in script
+    jump .choice1_menu
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1631, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\script.py", line 875, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'choice1_menu.choice1_menu'.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Sat Jan 19 11:54:09 2019
+Tue Jan 22 16:48:10 2019

@@ -7,6 +7,10 @@ define menu = nvl_menu
 define quick_menu = True
 
 ##### Choices
+## Van Interior Imagemap
+define far_wall = False
+define side_wall = False
+define floor = False
 ## First Choice
 define firstChoice = -1
 define loop = 0
@@ -16,6 +20,7 @@ define WHERE_ARE_WE_HEADED = 1
 ###### Screens
 image diantheCGsketch = "images/diantheCGsketch.png"
 image chapterScreenMockup = "images/chapterscreen.png"
+image vanInterior = "images/van_interior.png"
 
 ##### Sprites
 ## Jobber
@@ -117,17 +122,65 @@ label start:
     show Jobber_L
 
     advNarrator "\"Hey there! You alright?\""
-    advNarrator "I blink once, confused. {i}She...{w=1.5} she kidnapped me, right?{/i}"
+    advNarrator "I blink once, confused. {i}She...{w=0.7} she kidnapped me, right?{/i}"
     advNarrator "\"I-I’m fine.\" {i}She kidnapped me, right? Why is she acting so nice to me?{/i}"
     advNarrator "\"Good, I was worried there for a second!\" she says, a huge grin across her face."
 
     """
     Why is she so concerned my well-being if she is the one who kidnapped me? Maybe hostages in good condition sell for more? Or could she be trying to keep my organs in working order?
 
-	Good question: why was I kidnapped? I need to gather more information. Seeing as my mouth is uncovered and my ability to speak is unimpeded, I ask...
-    """
+	Good question: why was I kidnapped? I need to gather more information.
 
-label .choice1_menu:
+    First, I should figure out my surroundings.
+    """
+    jump van_interior
+
+label van_interior:
+    python:
+        if (side_wall == False or floor == False or far_wall == False):
+            renpy.show("vanInterior")
+            renpy.show_screen("van_interior")
+            renpy.pause()
+
+    hide vanInterior
+    nvl clear
+    """
+    I have an idea of my surroundings. As I suspected from the sounds, I’m inside of a car. It looks like the back of a van. It’s... familiar somehow, this setting that is. I feel like I’ve been somewhere like this before.
+
+    I struggle against my restraints again to no avail. Every time I move, the rope just cuts deeper and deeper into my flesh. I feel something warm trickle down the side of my hand.
+
+    If I can’t escape by myself, then I need to delay whatever is going to happen to me as long as possible. I need to distract these people in front of me. Seeing as my mouth is uncovered and my ability to speak is unimpeded, I ask...
+    """
+    jump choice1_menu
+
+label side_wall:
+    hide screen van_interior
+    """
+    No windows... I can’t tell if it’s day or night or even where I am. The walls look reinforced too... Looks that I can’t get out that way.
+    """
+    $ side_wall = True
+    window hide
+    jump van_interior
+
+label floor:
+    hide screen van_interior
+    """
+    Cold, hard, and terribly uncomfortable to sit on. My legs are going numb from the constant vibrations.
+    """
+    $ floor = True
+    window hide
+    jump van_interior
+
+label far_wall:
+    hide screen van_interior
+    """
+    Looks like that wall is solid metal... It won’t be easy to break through it. That’s one route gone.
+    """
+    $ far_wall = True
+    window hide
+    jump van_interior
+
+label choice1_menu:
     menu:
         "Where am I?" if (firstChoice != WHERE_AM_I):
             python:
@@ -143,11 +196,11 @@ label .choice1_menu:
             renpy.say(advNarrator, "{i}I guess I might as well ask that next{/i}, I think.")
 
     if (firstChoice == WHERE_AM_I):
-        jump .choice1_0
+        jump choice1_0
     elif (firstChoice == WHERE_ARE_WE_HEADED):
-        jump .choice1_1
+        jump choice1_1
 
-label .choice1_0:
+label choice1_0:
     python:
         if (loop == 0):
             renpy.say(advNarrator, "The woman's smile grows wider, but her eyes are filled with a different emotion... Pity, maybe?")
@@ -159,13 +212,13 @@ label .choice1_0:
         renpy.say(advNarrator, "\"He also woke up far too early when he was put under. That landed him in a spot of trouble... Well, I’m sure that nothing like that will happen here.\" On that ominous note, she stops talking.")
     if (loop == 0):
         $ loop = 1
-        jump .choice1_menu
+        jump choice1_menu
     else:
-        jump .choice1_merge
+        jump choice1_merge
 
-label .choice1_1:
+label choice1_1:
     python:
-        renpy.say(advNarrator, "\"We’re heading to a private airfield where you can board a plane so that we can get you to our headquarters. That would be...\"")
+        renpy.say(advNarrator, "\"We’re heading to a private airfield so we can get you to headquarters. That would be...\"")
         renpy.say(advNarrator, "She looks over at a man standing next to her. He is clad in a black trenchcoat, like the ones that the characters wore in that one movie about magic, flying, karate-wielding computer hackers. Had he been the one she had been talking to earlier?")
         renpy.say(advNarrator, "\"Where is it again? It’s on Alcatraz Island, right?\"")
         renpy.say(advNarrator, "The man sighs.")
@@ -176,11 +229,11 @@ label .choice1_1:
         renpy.say(advNarrator, "\"You heard the man! We’re headed to Alcatraz! Isn’t that exciting? It’s quite a popular tourist destination, you know. It’ll be fun, I promise!\"")
     if (loop == 0):
         $ loop = 1
-        jump .choice1_menu
+        jump choice1_menu
     else:
-        jump .choice1_merge
+        jump choice1_merge
 
-label .choice1_merge:
+label choice1_merge:
     # merges back into the story
     nvl clear
 
@@ -203,7 +256,7 @@ label .choice1_merge:
     play sound "sounds/finger_snap.ogg"
 
     """
-    The man standing next to Jobber raises his right hand, snapping his fingers. The patterns on his trenchcoat start to glow a faint blue. Jobber does the same. I feel the atmosphere shift a little. There is a slight buzzing in my ears, as if the air with getting filled with electricity, except not quite. A delightful shiver runs through my limbs, begging me to leap into action.
+    The man standing next to Jobber raises his right hand, snapping his fingers. The patterns on his trenchcoat spark to life, glowing a faint blue. Jobber does the same. I feel the atmosphere shift a little. There is a slight buzzing in my ears, as if the air with getting filled with electricity, except not quite. A delightful shiver runs through my limbs, begging me to leap into action.
     """
     nvl clear
 
@@ -218,7 +271,7 @@ label .choice1_merge:
     play sound "sounds/gunshot_assault_rifle.ogg"
 
     advNarrator "\"Gah!\""
-    advNarrator "This time, the man doubles over in pain, a blotch of red spreading out from his stomach region. He hacks out a cough, spraying crimson all over himself, further staining his coat. The red on black... the contrast stirs something within me."
+    advNarrator "This time, the man doubles over in pain, a blotch of red spreading out from his chest region. He hacks out a cough, spraying crimson all over himself, further staining his coat. The red on black... the contrast stirs something within me."
 
     play sound "sounds/heartbeat.ogg"
 
@@ -226,28 +279,25 @@ label .choice1_merge:
     advNarrator "Jobber puts her hand to the metal partition that separates the back of the van from the driver and passenger seats but pulls back abruptly with a yelp. She stares at her angry red palm in surprise. \"Heat?\" she whispers out. Her eyes widen in fear. \"Fire?\""
 
     play sound "sounds/metal_melting.ogg"
-    $ renpy.transition(dissolve)
-    # show screen viewport_test("diantheCGsketch", z = 2.0)
-    # show screen clickable_test
-    show screen imagemap_test
+    show diantheCGsketch with dissolve
     pause
 
 label postDianthe:
     show diantheCGsketch
 
     """
-    A girl. Through the melted pool of steel and aluminum lying at the floor of the van steps a girl. Something about her captivated me. Her eyes, purple like amethysts. Purple? Is having purple eyes even naturally possible?
+    A girl. Through the melted pool of steel and aluminum lying at the floor of the van steps a girl. Something about her captivates me. Her eyes, purple like amethysts. Purple? Is having purple eyes even naturally possible? I wouldn’t be surprised if it wasn’t. They look so mesmerizing... I just want to stare into them forever. The look in her eyes… it is like that of an angel. Just looking at her provides me with a feeling of calm.
 
-    It was not just her eyes, either. Everything about her struck me as odd and out of place. She could not have possibly been much older than me but her aura... it just felt like she had lived several more lifetimes than me.
+    It was not just her eyes either. Everything about her struck me as otherworldly and fantastical. She could not have possibly been much older than me but her aura... it just felt like she had lived several more lifetimes than me.
 
-    She enters without a sound. Her walking is so graceful that it almost did not seem like she was walking at all. Floating, no, hovering almost. It would not surprise me at all if this girl is just some ephemeral hallucination of mine.
+    She enters without a sound. Her walking is so graceful that it almost did not seem like she was walking at all. Floating, no, hovering almost. It would seriously not surprise me at this point if this girl is just some stress-induced ephemeral hallucination of mine. That has to be it: I must be completely delirious.
     """
     nvl clear
 
     scene alley with dissolve
     show Jobber_R
 
-    advNarrator "The girl casually waves the assault rifle she is carrying in my direction. \"I’m here for her,\" she says in a soft, monotone voice."
+    advNarrator "The girl casually waves the muzzle of the assault rifle she is carrying in my direction. \"I’m here for her,\" she says in a soft, monotone voice."
     advNarrator "She speaks. Even her voice sounds like an illusion!"
     advNarrator "Jobber tightens her grip on my shoulder. \"Not happening. She’s under my protection.\""
     advNarrator "Jobber sees her too. Guess that rules out me going insane."
@@ -364,17 +414,28 @@ label postDianthe:
     advNarrator "The woman clicks her tongue. \"Such a shame. Her life really did start and end in the flames.\""
     advNarrator "As I sit there, speechless from the horror of it all, the woman turns her attention toward me. She bends down and offers me a hand, smiling."
 
-    advNarrator "This smile... This one is genuine. It isn’t like the one she had been wearing earlier... No, that was nothing but a mask. This... This is her real smile."
+    advNarrator "This smile... this one is genuine. It isn’t like the one she had been wearing earlier... No, that was nothing but a mask. This... this is her real smile."
     advNarrator "\"So, what do you say? You have nowhere to turn to. The Mages’ Society has been dealt with and your home has abandoned you. Will you allow me to nurture you, pamper you, to tend to your every need and want? If you say it, you will be mine and I will be yours."
     advNarrator "So, tell me..."
     advNarrator "\"Will you accept me as your mother?\""
 
-    jump .end
+    menu:
+        "Yes":
+            """
+            I try to respond, but my voice gets caught in my throat. I can’t speak. My head is absolutely killing me. The last thing I see before everything fades to black is the woman’s face, still smiling down on me.
+            """
+        "No":
+            """
+            I try to respond, but my voice gets caught in my throat. I can’t speak. My head is absolutely killing me. The last thing I see before everything fades to black is the woman’s face, still smiling down on me.
+            """
 
-label .end:
+    jump end
+
+label end:
+    $ quick_menu = False
     stop sound
     stop music
-    show end
+    show black_bg with fade
     pause 2.0
 
     return
