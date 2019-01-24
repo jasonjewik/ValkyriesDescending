@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 141: invalid syntax
-        scene vanInterior
-                         ^
-    
+File "game/script.rpy", line 148: end of line expected.
+    hide screen vp_im_test with dissolve
+                           ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Jan 22 16:44:02 2019
+Wed Jan 23 17:34:15 2019

@@ -1,22 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 215, in script
-    jump .choice1_menu
-ScriptError: could not find label 'choice1_menu.choice1_menu'.
+  File "game/script.rpy", line 151, in script
+    
+  File "renpy/common/00nvl_mode.rpy", line 380, in do_display
+    **display_args)
+TypeError: 'unicode' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 215, in script
-    jump .choice1_menu
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 1631, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\script.py", line 875, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'choice1_menu.choice1_menu'.
+  File "game/script.rpy", line 151, in script
+    
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ast.py", line 678, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\exports.py", line 1204, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\character.py", line 1031, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "renpy/common/00nvl_mode.rpy", line 380, in do_display
+    **display_args)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\character.py", line 572, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Jason Jewik\Documents\renpy-7.1.0-sdk\renpy\display\core.py", line 3002, in interact_core
+    new_widget=layers_root)
+TypeError: 'unicode' object is not callable
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 Valkyries Descending 1.0
-Tue Jan 22 16:48:10 2019
+Wed Jan 23 17:35:06 2019

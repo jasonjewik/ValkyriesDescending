@@ -1490,6 +1490,21 @@ screen van_interior():
         hotspot (520, 700, 730, 380) clicked [Jump("floor")]
         hotspot (1240, 0, 680, 1080) clicked [Jump("far_wall")]
 
+screen vp_im_test():
+    viewport:
+        if imEnabled == True:
+            edgescroll (200, 600)
+        else:
+            edgescroll None
+        child_size (3840, 2160)
+        frame:
+            imagemap:
+                ground "images/van_interior.png"
+                if imEnabled == True:
+                    hotspot (0, 0, 1000, 2160) clicked [Jump("side_wall")]
+                    hotspot (1040, 1400, 1460, 760) clicked [Jump("floor")]
+                    hotspot (2480, 0, 1360, 2160) clicked [Jump("far_wall")]
+
 ################################################################################
 ## Mobile Variants
 ################################################################################

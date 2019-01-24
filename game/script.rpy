@@ -11,6 +11,7 @@ define quick_menu = True
 define far_wall = False
 define side_wall = False
 define floor = False
+define imEnabled = True
 ## First Choice
 define firstChoice = -1
 define loop = 0
@@ -138,11 +139,15 @@ label start:
 label van_interior:
     python:
         if (side_wall == False or floor == False or far_wall == False):
-            renpy.show("vanInterior")
-            renpy.show_screen("van_interior")
+            # renpy.show("vanInterior")
+            imEnabled = True
+            renpy.show_screen("vp_im_test")
             renpy.pause()
 
-    hide vanInterior
+    # hide vanInterior
+    $ renpy.transition(dissolve)
+    hide screen vp_im_test
+    pause 0.2
     nvl clear
     """
     I have an idea of my surroundings. As I suspected from the sounds, I’m inside of a car. It looks like the back of a van. It’s... familiar somehow, this setting that is. I feel like I’ve been somewhere like this before.
@@ -154,29 +159,47 @@ label van_interior:
     jump choice1_menu
 
 label side_wall:
-    hide screen van_interior
-    """
-    No windows... I can’t tell if it’s day or night or even where I am. The walls look reinforced too... Looks that I can’t get out that way.
-    """
-    $ side_wall = True
+    # hide screen vp_im_test
+    $ imEnabled = False
+    if side_wall == False:
+        """
+        No windows... I can’t tell if it’s day or night or even where I am. The walls look reinforced too... Looks that I can’t get out that way.
+        """
+        $ side_wall = True
+    else:
+        """
+        I already checked the side wall.
+        """
     window hide
     jump van_interior
 
 label floor:
-    hide screen van_interior
-    """
-    Cold, hard, and terribly uncomfortable to sit on. My legs are going numb from the constant vibrations.
-    """
-    $ floor = True
+    # hide screen vp_im_test
+    $ imEnabled = False
+    if floor == False:
+        """
+        Cold, hard, and terribly uncomfortable to sit on. My legs are going numb from the constant vibrations.
+        """
+        $ floor = True
+    else:
+        """
+        I already checked the floor.
+        """
     window hide
     jump van_interior
 
 label far_wall:
-    hide screen van_interior
-    """
-    Looks like that wall is solid metal... It won’t be easy to break through it. That’s one route gone.
-    """
-    $ far_wall = True
+    # hide screen vp_im_test
+    $ imEnabled = False
+    if far_wall == False:
+        """
+        Looks like that wall is solid metal... It won’t be easy to break through it. That’s one route gone.
+        """
+        $ far_wall = True
+    else:
+        """
+        I already checked the far wall.
+        """
     window hide
     jump van_interior
 
