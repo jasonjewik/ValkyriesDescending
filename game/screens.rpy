@@ -336,7 +336,7 @@ screen navigation():
 
                 textbutton _("Quit") action Quit(confirm=not main_menu)
 
-## Test alt Navigation screen ##################################################
+## Alt Navigation screen ##################################################
 
 screen alt_navigation():
 
@@ -1451,59 +1451,25 @@ style nvl_button:
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
 
-## Clickable Screens ##################################################################
+## Addiional Screens ###########################################################
 ##
-## These screens are used for clickable elements.
+## The following are things custom for this game.
 ##
-init python:
-    screenX = 0.0
-    output = ""
-
-screen clickable_test():
-    modal False
-    zorder 5
-    imagebutton:
-        idle "images/korok.jpg"
-        hover "images/korok_found.jpg"
-        xalign screenX
-        action [Notify("Accepted Korok seed.")]
-
-screen viewport_test(img, xi = 0.5, yi = 0.5, z = 1.0, xa = 0.5, ya = 0.5):
-    modal False
-    viewport id "vp":
-        draggable True
-        xinitial xi
-        yinitial yi
-        add img zoom z xalign xa yalign ya
-
-    textbutton "Continue" action [Hide("viewport_test"), Jump("postDianthe")] xalign 0.97 yalign 0.97
-
-screen imagemap_test():
-    imagemap:
-        ground "images/diantheCGsketch.png"
-        hotspot (0, 0, 500, 500) clicked [Notify("click!")] alternate [Notify("alt-click!")]
-
-screen van_interior():
-    imagemap:
-        ground "images/van_interior.png"
-        hotspot (0, 0, 500, 1080) clicked [Jump("side_wall")]
-        hotspot (520, 700, 730, 380) clicked [Jump("floor")]
-        hotspot (1240, 0, 680, 1080) clicked [Jump("far_wall")]
-
-screen vp_im_test():
+screen viewport_imagemap(trigger_dist = 200, scroll_dist = 600, child_size_x = 3840, child_size_y = 2160, scn):
     viewport:
         if imEnabled == True:
-            edgescroll (200, 600)
+            edgescroll (trigger_dist, scroll_dist)
         else:
             edgescroll None
-        child_size (3840, 2160)
+        child_size (child_size_x, child_size_y)
         frame:
             imagemap:
-                ground "images/van_interior.png"
-                if imEnabled == True:
-                    hotspot (0, 0, 1000, 2160) clicked [Jump("side_wall")]
-                    hotspot (1040, 1400, 1460, 760) clicked [Jump("floor")]
-                    hotspot (2480, 0, 1360, 2160) clicked [Jump("far_wall")]
+                if scn == "prologue":
+                    ground "images/placeholders/van_interior.png"
+                    if imEnabled == True:
+                        hotspot (0, 0, 1000, 2160) clicked [Jump("side_wall")]
+                        hotspot (1040, 1400, 1460, 760) clicked [Jump("floor")]
+                        hotspot (2480, 0, 1360, 2160) clicked [Jump("far_wall")]
 
 ################################################################################
 ## Mobile Variants

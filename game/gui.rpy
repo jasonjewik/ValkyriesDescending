@@ -197,7 +197,7 @@ init python:
             # it (internal positions use float for smooth movements =D)
             return int(self.xpos), int(self.ypos), st, self.image
 
-image snow = Snow(image = Image("images/snow.png"), max_particles = 500, speed = 300, wind = 150)
+image snow = Snow(image = "images/vfx/snow.png", max_particles = 500, speed = 300, wind = 150)
 
 ################################################################################
 ## GUI Configuration Variables
@@ -271,7 +271,7 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "images/titlescreen.png"
+define gui.main_menu_background = "images/title-screens/main-menu.png"
 define gui.main_menu_overlay = "snow"
 define gui.game_menu_background = "gui/game_menu.png"
 
